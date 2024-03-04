@@ -60,7 +60,8 @@ will help you with your research, and you can have some fun doing it.
 
 - Knowledge of programming with Python.  We will expect that you know what a
   class is and how you can subclass it.
-- Some experience with using command line tools is necessary.
+- Some experience with using command line tools is necessary. You should also
+  be comfortable writing a Python program that takes command line arguments.
 - Knowledge of basic numpy and matplotlib will be useful but not mandatory.
 
 - For setup you will require a working Python installation and also install
@@ -77,7 +78,8 @@ for more than two decades and has been teaching Python and Python related
 tools in various capacities for many years. Prabhu is also the main author of
 automan which he wrote to save himself from dealing with the drudgery of
 management of hundreds of simulation results for one of his papers.  Prabhu
-also gave a talk on automan at SciPy 2022 which you can see here
+also gave a talk on automan at SciPy 2022 titled "The (Surprising) Road to
+Reproducibility: Automation!" which you can see here
 (https://www.youtube.com/watch?v=zvBotV6r9AY).
 
 
