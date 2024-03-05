@@ -4,30 +4,40 @@ Track: Tutorials
 
 ## Description
 
-We've found that automating numerical research introduces significant personal
-benefit in the form of improving your research output and productivity.
-Automation makes it much easier to run large parameter sweeps and studies and
-allows you to focus on the important questions to ask rather than managing
-hundreds or thousands of simulations manually. This takes the drudgery of
-data/file management out of your hands, systematizes your research, and makes
-it possible to incrementally improve and refine your work. The added nice
-benefit is that your research also becomes much easier to reproduce.  
+In the research involving numerical methods, we often have to execute several
+test cases that might become a part of the final manuscript.
+It is found that automating these test case executions and their post-processing
+introduces significant personal benefit in the form of improving your
+research output and productivity. Automation makes it much easier to run
+large parameter sweeps and studies and allows you to focus on the important
+questions to ask rather than managing hundreds or thousands of simulations
+manually. This takes the drudgery of data/file management out of your
+hands, systematizes your research, and makes it possible to incrementally
+improve and refine your work. The added nice benefit is that your research
+also becomes much easier to reproduce.
 
 In this tutorial we introduce you to a simple package called automan
-(https://automan.readthedocs.io) which facilitates automation. We'll walk
-through using the automan package using some simple cooked up examples to show
-how it works. We will then try to help you with your own research and help you
-automate your own research papers to the extent possible. Our hope is at the
-end of the tutorial you will be exposed to the features provided by automan
-and can use it to automate your research work and boost your own productivity.  
+(https://automan.readthedocs.io) which facilitates automation. Automan can
+automate a code written any language as long as it can be executed using a
+terminal command. Additionally, a parameter sweep is possible as long as
+the program parameters are not hard-coded inside the program.
 
-All you need to know is basic Python, some matplotlib, and no discomfort using
-command-line tools (if your head spins at seeing a command prompt, this
-tutorial may give you a headache).
+We'll walk through using the automan package using some quintessential
+examples to show how it works. We will then try to help you with your own
+research and help you automate your own set of test cases to the extent
+possible. Our hope is at the end of the tutorial you will be exposed to the
+features provided by automan and can use it to automate your research work
+and boost your own productivity.
+
+All you need to know is basic Python, some matplotlib, and no discomfort
+using command-line tools (if your head spins at seeing a command prompt,
+this tutorial may give you a headache). Additionally, we would like you to
+use python within a virtual environment and have some basic knowledge about
+python virtual environment management.
 
 We hope to help you automate one of your current research studies or
 publication during the tutorial. So come join us, bring your work along, we
-will help you with your research, and you can have some fun doing it.
+will work with your research, and you can have some fun doing it.
 
 
 ## Outline
@@ -55,17 +65,18 @@ will help you with your research, and you can have some fun doing it.
 - Using this for your research (60 m)
 
 
-
 ## Prerequisites
 
-- Knowledge of programming with Python.  We will expect that you know what a
+- Knowledge of programming with Python. We will expect that you know what a
   class is and how you can subclass it.
 - Some experience with using command line tools is necessary. You should also
-  be comfortable writing a Python program that takes command line arguments.
+  be comfortable writing a Python program that takes command line
+  arguments.
+- Knowledge of python virtual environment management.
 - Knowledge of basic numpy and matplotlib will be useful but not mandatory.
 
-- For setup you will require a working Python installation and also install
-  automan with `pip install automan`.
+- For setup you will require a working Python installation within a virtual
+  environment and also install automan with `pip install automan`.
 
 
 ## Bios
@@ -82,17 +93,26 @@ also gave a talk on automan at SciPy 2022 titled "The (Surprising) Road to
 Reproducibility: Automation!" which you can see here
 (https://www.youtube.com/watch?v=zvBotV6r9AY).
 
+Pawan Negi is a post-doctoral researcher at the Department of Applied
+Mathematics, Illinois institute of Technology. He has been teaching
+mathematics courses to undergraduate students since last year. He earned
+his PhD under the supervision of Dr. Prabhu Ramachandran, where he
+extensively utilized automan to execute hundreds of test cases for his
+thesis. He also contributed pull requests towards the development of automan.
+
 
 ## For the reviewers of this abstract
 
 Almost the entire session will be hands on. Barring the introduction and
-explanation of features we will gradually introduce we will be asking the
-audience to write code as we go along.  We will provide skeleton files for the
-attendees to start quickly. At the end we have reserved a full hour to help
-the attendees use this for their own work. 
+explanation of features, we will be asking the audience to write code as we
+go along.  We will provide skeleton files for the attendees to start
+quickly. At the end we have reserved a full hour to help the attendees use
+this for their own research work.
 
 A somewhat complete automan tutorial is available at
-https://automan.readthedocs.io/en/latest/tutorial.html
+https://automan.readthedocs.io/en/latest/tutorial.html and a set of
+research papers that employ automan to make their work reproducible are
+available at https://gitlab.com/pypr
 
 While we will reuse content from the official tutorial, it will be done in a
 way that attendees get a complete hands-on introduction.
