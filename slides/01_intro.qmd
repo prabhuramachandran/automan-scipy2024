@@ -18,20 +18,84 @@ format:
 
 # Welcome!
 
+
+## Backdrop
+
+>   An article about computational science in a scientific publication is
+>   not the scholarship itself, it is merely advertising of the
+>   scholarship. The actual scholarship is the complete software
+>   development environment and the complete set of instructions which
+>   generated the figures.
+
+<p style="text-align: right">
+-- Buckheit, J. and Donoho, D. L. (paraphrasing Jon F. Claerbout)
+<p>
+
+## Background
+
+- Numerical methods papers require a lot of computation
+- We make mistakes in papers
+   - Typos
+   - Missing or wrong parameters
+   - Code availability
+- Dealing with reviewer comments months afterward
+
+## A modest reproducibility goal
+
+<br/>
+<br/>
+
+- Can you, reproduce your paper results (or that of a colleague), after a year?
+- Can you reproduce results of a colleague's paper who works in the same area?
+
 ## Goals
 
-- Learn how to automate your research output/publication
-- Automate your paper
-    - Every figure of the manuscript is automated
+- Use [automan](https://github.com/pypr/automan) for your research output/publication
+- Automate your manuscript
+    - All simulations
+    - All figures
 
 ## Pre-requisites
 
 - Basic knowledge of Python
+- Using classes in Python
+- Comfort with using the command line prompt
 
-## What is automan?
+## Automan helps you
+
+- organize your simulations
+- orchestrate running simulations and do post-processing
+- reuse code for post processing
+- generate all simulations and figures with one command
+- optionally distribute simulations among other computers
+
+
+## Best usage recommendations
+
+Your programs should:
+
+1. be configurable using command line arguments
+
+2. generate their output files into a directory specified on the command line
+
+3. save post-processed data into a datafile and not just create plots
 
 
 ## Why automan and not xyz?
 
-- Other tools: mlflow, guild.ai, sacred
+- Other tools:
+    - [mlflow](https://mlflow.org)
+    - [guild.ai](https://guild.ai)
+    - [sacred](https://sacred.readthedocs.io)
+    - [neptune.ai](https://neptune.ai)
 
+- Automan is designed for the numerical methods workflow
+
+## Learn the general idea
+
+<br/>
+
+- Want to learn the general approach
+
+- automan is one particular option
+- Can use any other tool too
