@@ -1,7 +1,19 @@
 # Automate your research with automan
 
 This workshop will show you how you can productively manage your numerical
-simulations and fully automate your research publication outputs.
+simulations and fully automate your research publication outputs using
+[automan](https://automan.readthedocs.io)
+
+Our research group has found using automan very helpful and also made us more
+productive as it eliminates much of the drudgery of managing simulations. The
+upshot is that using automan also makes it much easier for anyone to reproduce
+our research. You can find over a dozen fully automated papers from here:
+https://gitlab.com/pypr
+
+See a short [SciPy 2022 presentation on
+automan](https://www.youtube.com/watch?v=zvBotV6r9AY) for a quick overview of
+automan.  This workshop will get you acquainted with automan and help you use
+it to automate your own research manuscripts.
 
 Join us at the workshop if you would like to:
 
@@ -11,7 +23,8 @@ Join us at the workshop if you would like to:
 - distribute and execute your simulations efficiently and automatically.
 
 We will help you with your manuscripts during the workshop, so do join us on
-9th July 2024 at the SciPy 2024 workshops.
+9th July 2024 at the [SciPy 2024](https://www.scipy2024.scipy.org/) workshops
+in Tacoma, WA.
 
 # Installation instructions
 
