@@ -1,0 +1,37 @@
+---
+title: 'Automate your research with automan'
+subtitle: Introduction
+author: 
+    - Prabhu Ramachandran
+    - Pawan Negi
+
+institute: 
+    - Department of Aerospace Engineering, IIT Bombay
+    - Illinois Institute of Technology, USA
+date: 9 July, 2024
+format:
+  revealjs:
+     slide-number: true
+     chalkboard: true
+     theme: default
+---
+
+# Welcome!
+
+## Goals
+
+- Learn how to automate your research output/publication
+- Automate your paper
+    - Every figure of the manuscript is automated
+
+## Pre-requisites
+
+- Basic knowledge of Python
+
+## What is automan?
+
+
+## Why automan and not xyz?
+
+- Other tools: mlflow, guild.ai, sacred
+

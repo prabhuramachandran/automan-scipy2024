@@ -1,0 +1,31 @@
+---
+title: 'Getting started'
+author: 
+    - Prabhu Ramachandran
+    - Pawan Negi
+
+institute: 
+    - Department of Aerospace Engineering, IIT Bombay
+    - Illinois Institute of Technology, USA
+date: 9 July, 2024
+format:
+  revealjs:
+     slide-number: true
+     chalkboard: true
+     theme: default
+---
+
+## Getting started with automan
+
+## Installation and pre-reqs
+
+## A toy example
+
+- Introduce a toy problem to explore.
+
+## Running the simulations
+
+## Generating output 
+
+## Summary of workflow
+

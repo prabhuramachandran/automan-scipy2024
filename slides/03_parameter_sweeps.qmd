@@ -1,0 +1,27 @@
+---
+title: 'Parameter sweeps'
+author: 
+    - Prabhu Ramachandran
+    - Pawan Negi
+
+institute: 
+    - Department of Aerospace Engineering, IIT Bombay
+    - Illinois Institute of Technology, USA
+date: 9 July, 2024
+format:
+  revealjs:
+     slide-number: true
+     chalkboard: true
+     theme: default
+---
+
+## Performing Parameter Sweeps
+
+## Generating parameter variations easily
+
+## Auto-generating output directories
+
+## Putting it all together
+
+## Exercise
+

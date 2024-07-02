@@ -1,10 +1,17 @@
 # Automate your research with automan
 
+This workshop will show you how you can productively manage your numerical
+simulations and fully automate your research publication outputs.
 
-This currently holds the proposal being submitted to SciPy 2024. 
+Join us at the workshop if you would like to:
 
-The repository will eventually hold the slides and examples for the tutorial.
+- organize your simulations,
+- manage multiple simulations with minimal fuss,
+- generate all simulations and figures for your manuscript with a single command,
+- distribute and execute your simulations efficiently and automatically.
 
+We will help you with your manuscripts during the workshop, so do join us on
+9th July 2024 at the SciPy 2024 workshops.
 
 # Installation instructions
 
