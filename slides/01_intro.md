@@ -1,23 +1,35 @@
 ---
-title: 'Automate your research with automan'
-subtitle: Introduction
-author: 
-    - Prabhu Ramachandran
-    - Pawan Negi
-
-institute: 
-    - Department of Aerospace Engineering, IIT Bombay
-    - Illinois Institute of Technology, USA
-date: 9 July, 2024
-format:
-  revealjs:
-     slide-number: true
-     chalkboard: true
-     theme: default
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .md
+      format_name: markdown
+      format_version: '1.3'
+      jupytext_version: 1.14.5
+  kernelspec:
+    display_name: Python 3 (ipykernel)
+    language: python
+    name: python3
 ---
 
-# Welcome!
+<!-- #region slideshow={"slide_type": "slide"} -->
+# Automate your research with automan
 
+**Prabhu Ramachandran and Pawan Negi**
+
+**SciPy 2024**
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+
+<center>
+<h1> Welcome! </h1>
+</center>
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 
 ## Backdrop
 
@@ -31,6 +43,9 @@ format:
 -- Buckheit, J. and Donoho, D. L. (paraphrasing Jon F. Claerbout)
 <p>
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Background
 
 - Numerical methods papers require a lot of computation
@@ -40,6 +55,9 @@ format:
    - Code availability
 - Dealing with reviewer comments months afterward
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## A modest reproducibility goal
 
 <br/>
@@ -48,6 +66,9 @@ format:
 - Can you, reproduce your paper results (or that of a colleague), after a year?
 - Can you reproduce results of a colleague's paper who works in the same area?
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Goals
 
 - Use [automan](https://github.com/pypr/automan) for your research output/publication
@@ -55,12 +76,18 @@ format:
     - All simulations
     - All figures
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Pre-requisites
 
 - Basic knowledge of Python
 - Using classes in Python
 - Comfort with using the command line prompt
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Automan helps you
 
 - organize your simulations
@@ -70,6 +97,9 @@ format:
 - optionally distribute simulations among other computers
 
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Best usage recommendations
 
 Your programs should:
@@ -81,6 +111,9 @@ Your programs should:
 3. save post-processed data into a datafile and not just create plots
 
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Why automan and not xyz?
 
 - Other tools:
@@ -91,6 +124,9 @@ Your programs should:
 
 - Automan is designed for the numerical methods workflow
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
 ## Learn the general idea
 
 <br/>
@@ -99,3 +135,5 @@ Your programs should:
 
 - automan is one particular option
 - Can use any other tool too
+
+<!-- #endregion -->
