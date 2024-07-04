@@ -153,7 +153,7 @@ $ cd manuscript; mklatex paper.tex -pdf
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## The simplest automan
+## The simplest automation
 
 <!-- #endregion -->
 
@@ -187,8 +187,7 @@ $ cd manuscript; mklatex paper.tex -pdf
 <!-- #endregion -->
 
 ```python
-s = Simulation(root='test', base_command='test -d $output_dir', 
-               arg1=1, arg2='b')
+s = Simulation(root='test', base_command='test -d $output_dir', arg1=1, arg2='b')
 ```
 ```python
 s.name
@@ -210,6 +209,8 @@ s.render_parameter('arg1')
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Running the simulations
 
+- Run the simulations if needed
+
 ```bash
 $ python automate0.py
 ```
@@ -217,17 +218,78 @@ $ python automate0.py
 
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## Make some plots
+## Exercise: make some plots
+
+- Start with the `automate0.py`
+- Modify it to produce a plot in the `run` method
+- Hints:
+  1. Use `Simulation.input_path` to locate the files in simulation output (`results.npz`)
+  2. Use `self.output_path(*arg)` to output files in manuscript output folder
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Re-running post-processing
+
+- If you re-run 
+
+```bash
+$ python automate0.py
+```
+
+- Nothing will happen!
+
+- You can delete older output and redo it:
+
+```bash
+$ python automate0.py -f
+```
+
+- This will not delete the simulation files
 
 <!-- #endregion -->
 
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## Generating output 
+## Solution
+<!-- #endregion -->
 
+```python
+%load ../code/automate1.py
+```
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Exercise: more simulations
+
+- Start with the previous solution: `automate1.py`
+- Modify it to produce output for $x^1, x^2, x^3, x^4, x^5$
+
+<!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Solution
+<!-- #endregion -->
+
+```python
+%load ../code/automate1.py
+```
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Observations
+
+- Automan will not re-run already completed cases
+- Automatically runs all the other cases
+- Need to use `-f` as the output was already produced earlier
+- Assumption is that post-processing is generally quick
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Summary of workflow
+
+- Break up requirements into `Problem`s
+- Each `Problem` can have many `Simulation`s (in `self.cases`)
+- Use the convenience methods of `Simulation` to generalize the plots
+- Automan manages the rest
 
 <!-- #endregion -->
