@@ -106,7 +106,7 @@ Your programs should:
 
 1. be configurable using command line arguments
 
-2. generate their output files into a directory specified on the command line
+2. generate output files in directory specified on command line
 
 3. save post-processed data into a datafile and not just create plots
 
@@ -123,6 +123,33 @@ Your programs should:
     - [neptune.ai](https://neptune.ai)
 
 - Automan is designed for the numerical methods workflow
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## How does this help us?
+
+- Have a dozen automated papers
+   - https://gitlab.com/pypr
+   - https://github.com/nn4pde
+
+- Everyone in the lab automates (by default!)
+
+- Much easier to incrementally do research
+
+- Less stress
+
+- Easy to make changes (even months after submission!)
+
+- Exploration is driven by `automan`
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Bottom line
+
+- It takes some effort to use automan
+- But ... the results are well worth it
 
 <!-- #endregion -->
 

@@ -44,9 +44,9 @@ Your programs should:
 
 1. be configurable using command line arguments
 
-2. generate their output files into a directory specified on the command line
+2. generate output files in directory specified on command line
 
-3. save post-processed data into a datafile and not just create plots
+3. save post-processed data into a file
 
 <!-- #endregion -->
 
@@ -75,6 +75,13 @@ Your programs should:
 - Plot the results in the generated `results.npz`
 
 <!-- #endregion -->
+```python
+%matplotlib inline
+```
+
+```python
+# Your solution here.
+```
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Solution
@@ -83,13 +90,137 @@ Your programs should:
 
 ```python
 import numpy as np
+import matplotlib.pyplot as plt
 data = np.load('results.npz')
+plt.plot(data['x'], data['y'])
+plt.savefig('x_cube.png')
+```
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Automation requirements
+
+- Run ``powers.py`` with different arguments
+- Schedule all the simulations and complete them
+- Output: single plot comparing all the results
+
+<!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Using automan: the workflow
+
+- Write an `automate.py` (can be any Python file)
+- Specify the Problems (simulations and post-processing)
+- Run:
+
+```bash
+$ python automate.py
+```
+- Wait and do other work
+
+```bash
+$ cd manuscript; mklatex paper.tex -pdf
+```
+
+- Optionally add hardware resources
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Design overview
+<center>
+<img src="images/automator_design.svg" width="80%" height="70%"/>
+</center>
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## The basic idea
+
+- Simulation directory: simulation output (`outputs`)
+- Output directory: `manuscript/figures`
+
+<br/>
+
+- Break up simulations into `Problem`s
+- Each `Problem` may require many simulations
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+<center>
+<img src="images/problem_design.svg" width="80%" height="70%"/>
+</center>
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## The simplest automan
+
+<!-- #endregion -->
+
+```python
+%load ../code/automate0.py
+```
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Note the following
+
+1. The `Automator` instance and its arguments
+1. The `setup` method and `self.cases`
+1. `Simulation` instances 
+1. Use of `$output_dir`: automatically determined
+1. `self.simulation_path(*args)`: output directory of simulation
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Simulation instances
+
+- Manage the parameters
+- Allow filtering of cases
+- Specify number of cores/threads
+- Convert kwarg to command line arguments
+- Render kwarg in plots and produce labels
+
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Simulation examples
+
+<!-- #endregion -->
+
+```python
+s = Simulation(root='test', base_command='test -d $output_dir', 
+               arg1=1, arg2='b')
+```
+```python
+s.name
+```
+```python
+s.command
+```
+```python
+s.params
+```
+```python
+s.input_path('results.npz')
+```
+
+```python
+s.render_parameter('arg1')
 ```
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Running the simulations
 
+```bash
+$ python automate0.py
+```
 <!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Make some plots
+
+<!-- #endregion -->
+
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Generating output 
