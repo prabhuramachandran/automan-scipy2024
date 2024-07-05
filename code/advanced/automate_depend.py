@@ -23,19 +23,7 @@ class Powers(Problem):
 
     def run(self):
         self.make_output_dir()
-        plt.figure()
-        for case in self.cases:
-            data = np.load(case.input_path('results.npz'))
-            plt.plot(
-                data['x'], data['y'],
-                label=r'$x^{{%.2f}}$' % case.params['power']
-            )
-        plt.grid()
-        plt.xlabel('x')
-        plt.ylabel('y')
-        plt.legend()
-        plt.savefig(self.output_path('powers.pdf'))
-        plt.close()
+        # Some post processing
 
 
 class PowersPreCalc(Problem):

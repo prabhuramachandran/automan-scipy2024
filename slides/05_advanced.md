@@ -28,16 +28,14 @@ jupyter:
 - Options to set specific computation requirement 
     - `n_core`: Used for scheduling
     - `n_thread`: Used to set number of threads
-- Using these option in `Simulation`
-```python
+<!-- #endregion -->
 
-Simulation(root=self.input_path(i),
-          base_command='python print_n_thread.py',
-          job_info=dict(n_core=1, n_thread=i),
-)
-```
-```bash
-$ python automate_num_thread.py
+<!-- #region slideshow={"slide_type": "slide"} -->
+## How it's done
+
+<!-- #endregion -->
+```python
+%load ../code/advanced/automate_num_thread.py
 ```
 
 <!-- #endregion -->
@@ -47,8 +45,8 @@ $ python automate_num_thread.py
 
 - Running `n` simulations across `n` remote computers
 - A simple command 
-```python
-python automate.py -a user@hostname
+```bash
+$ python automate.py -a user@hostname
 ```
 adds the `user@hostname` to `config.json`
 
@@ -57,17 +55,30 @@ adds the `user@hostname` to `config.json`
   - program runs depending on free `n_core` on remote
   - outputs are copied back to local
 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Try running 
+
 ```bash
-$ python automate2.py -a user@localhost
+# this process requires a passwordless login access to ssh
+# for now type your password at every prompt
+# make sure your system allows remote login
+$ python automate2.py -a yourusername@localhost
 ```
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Clusters with SLURM
 
-- `automan` can be used within cluster
-- Example of a Portable Batch System (PBS) file
-```
+- automan can be used within cluster
+- Once it captures a compute node, automan runs all cases in that node
+- A Portable Batch System (PBS) file is used to schedule jobs
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Let's see an example of a PBS file 
+```bash
 #!/bin/bash
 #PBS -N reentry
 #PBS -l select=1:ncpus=32
@@ -88,7 +99,6 @@ python automate.py
 
 echo "Stopping at $(date)"
  ```
-- Once it captures a compute node, `automan` runs all cases in that node
 
 
 <!-- #endregion -->
@@ -96,7 +106,7 @@ echo "Stopping at $(date)"
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## ML/AI example
 
-- `automan` is not ideal during development of machine-learning models
+- automan is not ideal during development of machine-learning models
 - One can easily do parameter sweeps to produce insights
 - An example of parameter list for a neural network
   - Network width and depth
@@ -114,7 +124,7 @@ echo "Stopping at $(date)"
 - An example: running latex on a manuscript
 - Add a task using
 
-```python
+```bash
 from automan.api import FileCommandTask
 task = FileCommandTask(
 'latexmk manuscript/paper.tex -pdf -outdir=manuscript',
@@ -124,8 +134,8 @@ automator.add_task(task, name='genpdf', post_proc=True)
 ```
 - `genpdf`: Name of the task
 - Run the task using
-```python
-python automan,py genpdf
+```bash
+python automan.py genpdf
 ```
 <!-- #endregion -->
 
@@ -134,23 +144,30 @@ python automan,py genpdf
 
 - Program written in any other language can be automated
 - `automate_c.py` automates a c++ program
-- Unlike python we require to create input file
-```python
-def create_input(self, i):
-      dir = self.simulation_path(str(i))
-      power = float(i)
+<!-- #endregion -->
 
-      os.makedirs(dir, exist_ok=True)
-      fp = open(os.path.join(dir, 'input.txt'), 'w')
-      fp.writelines(dir + '\n' + str(power))
-      fp.close()
-``` 
-- Pass the input file in `base_cmd`
-```python
-base_cmd = './power.out $output_dir' + '/input.txt'
-```
+<!-- #region slideshow={"slide_type": "slide"} -->
+## The C++ program
+
+- compile power.cpp using 
 ```bash
-$ python automate_c.py
+$ g++ power.cpp -o power.out
+```
+- Unlike python we require to create input file
+- Create a txt file with two line
+  - Output directory name
+  - power input
+- Run the program
+```bash
+$ ./power.out input.txt
+```
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Automating the C++ code 
+<!-- #endregion -->
+```python
+%load ../code/advanced/automate_c.py
 ```
 
 
@@ -162,29 +179,13 @@ $ python automate_c.py
 - Some simulations require input which is an output of another simulation
 - We can create these kind of dependencies in `automan`
 - Let's create two Problems on which powers.py depend
-```python
-class PowersPreCalc(Problem):
-  ...
+<!-- #endregion -->
 
-class PowersPrePreCalc(Problem):
-  ...
-```
-- The problem `Powers` depends on `PowersPreCalc`, we code this using
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Let's look at the implemetation 
+<!-- #endregion -->
 ```python
-def get_requires(self):
-  tasks = super(Powers, self).get_requires()
-  tasks.extend([('a', PowersPreCalc(self.sim_dir, self.out_dir))])
-  return tasks
-``` 
-- In `PowersPreCalc` add depdency in `PowersPrePreCalc` 
-```python
-def get_requires(self):
-  tasks = super(PowersPreCalc, self).get_requires()
-  tasks.extend([('a', PowersPrePreCalc(self.sim_dir, self.out_dir))])
-  return tasks
-```
-```bash
-$ python automate_depend.py
+%load ../code/advanced/automate_depend.py
 ```
 
 <!-- #endregion -->
