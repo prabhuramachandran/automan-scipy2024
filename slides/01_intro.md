@@ -52,7 +52,8 @@ jupyter:
 - We make mistakes in papers
    - Typos
    - Missing or wrong parameters
-   - Code availability
+- Code availability is a problem
+- Management of simulation data
 - Dealing with reviewer comments months afterward
 
 <!-- #endregion -->
@@ -63,7 +64,7 @@ jupyter:
 <br/>
 <br/>
 
-- Can you, reproduce your paper results (or that of a colleague), after a year?
+- Can you, reproduce your paper results, after a year?
 - Can you reproduce results of a colleague's paper who works in the same area?
 
 <!-- #endregion -->
@@ -124,6 +125,8 @@ Your programs should:
 
 - Automan is designed for the numerical methods workflow
 
+- Automan is non-intrusive
+
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
@@ -154,13 +157,13 @@ Your programs should:
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## Learn the general idea
+## Learn the general approach to automation
 
 <br/>
 
 - Want to learn the general approach
 
 - automan is one particular option
-- Can use any other tool too
+- Can use any other tool also
 
 <!-- #endregion -->
