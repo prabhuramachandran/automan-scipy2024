@@ -101,12 +101,78 @@ filter_cases(cases, lambda x: x.params['order'] % 2)
 - Can compare runs: `compare_runs`
 - Example:
 
+<!-- #endregion -->
+
 ```python
-compare_runs(cases, plot_function, labels=['nx'], exact=exact_plot_func)
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
 ```
-- `plot_func(case, **kw)`: `kw` are plotting related kwargs
+
+```python
+def exact(case, **kw):
+  x = np.linspace(0, 2*np.pi, 20)
+  plt.plot(x, np.cos(x), label='Exact', **kw)
+
+def plotter(case, **kw):
+  # A plot for illustration.
+  x = np.linspace(0, 2*np.pi, 100)
+  w = case.params['order']
+  y = np.sin(w*x)
+  plt.plot(x, y, **kw)
+```
+
+```python
+case10 = filter_cases(cases, n_train=10)
+compare_runs(cases, plotter, labels=[order'], exact=exact)
+plt.legend();
+```
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Changing the linestyle
+
+- The line style can be customized
+- `compare_runs(sims, method, labels, exact, styles)`
+- Pass the last kwarg `styles`
+- The default implementation is
+
+<!-- #endregion -->
+
+```python
+import itertools as IT
+
+def styles(sims):
+    ls = [dict(color=x[0], linestyle=x[1]) for x in
+          IT.product("kbgr", ["-", "--", "-.", ":"])]
+    return IT.cycle(ls)
+```
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Other style examples
 
 <!-- #endregion -->
 
 
+```python
+# More colorful styles
+def styles(sims):
+    ls = [dict(linestyle=x[0], color=x[1]) for x in
+          IT.product(["-", "--", "-.", ":"], 'kbgrycm')]
+    return IT.cycle(ls)
+```
 
+```python
+# Setting markerstyles
+def mystyles(sims):
+    ls = [dict(color=x[1], linestyle='-',
+               marker=x[0], markevery=5) for x in
+          IT.product([None, '^', 'o'], 'kbgrcmy')]
+    return IT.cycle(ls)
+
+```
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Exercise
+
+- Update the `automate_polyfit.py` to make plots
+- Use the `filter*` and `compare_runs` functions
+<!-- #endregion -->
