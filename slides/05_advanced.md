@@ -15,7 +15,12 @@ jupyter:
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Advanced topics
 
+<br/>
+<br/>
+
 **Prabhu Ramachandran and Pawan Negi**
+
+<br/>
 
 **SciPy 2024**
 <!-- #endregion -->
@@ -78,6 +83,8 @@ $ python automate2.py -a yourusername@localhost
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Let's see an example of a PBS file 
+<!-- #endregion -->
+
 ```bash
 #!/bin/bash
 #PBS -N reentry
@@ -98,10 +105,9 @@ export PYTHONPATH="$(pwd):$PYTHONPATH"
 python automate.py
 
 echo "Stopping at $(date)"
- ```
+```
 
 
-<!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## ML/AI example
@@ -147,7 +153,7 @@ python automan.py genpdf
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## The C++ program
+## A C++ program
 
 - compile power.cpp using 
 ```bash
@@ -182,10 +188,26 @@ $ ./power.out input.txt
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## Let's look at the implemetation 
+## The implemetation 
 <!-- #endregion -->
 ```python
 %load ../code/advanced/automate_depend.py
 ```
+
+<!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Exercise
+
+- Take your current research/manuscript
+- Automate the generation of the figures
+- We will be around to help 
+<!-- #endregion -->
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Thank you!
+
+- Hope you learned something useful!
 
 <!-- #endregion -->
