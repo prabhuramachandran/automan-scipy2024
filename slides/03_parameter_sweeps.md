@@ -15,7 +15,12 @@ jupyter:
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Parameter sweeps
 
+<br/>
+<br/>
+
 **Prabhu Ramachandran and Pawan Negi**
+
+<br/>
 
 **SciPy 2024**
 
@@ -51,7 +56,7 @@ opts
 ## Exercises
 
 - Given three parameters
-  - `n` which we want values of 5, 10, 15
+  - `n` which we want values in [5, 10, 15]
   - `order` which is an integer in [1, 2, 3]
   - `func` which is either `'sin`' or `'gaussian'`
 - Generate the product of each of these as a list of dictionaries using mdict
@@ -95,7 +100,7 @@ all_opts
 ## Generating unique and sensible directory names
 
 - `mdict, dprod`: create parameter varations
-- However, we need to create unique directory names for each of the cases
+- However, we need unique directory names for each case!
 
 - Use `opts2path`
 
@@ -112,6 +117,12 @@ from automan.api import opts2path
 ```python
 opts2path(all_opts[5])
 ```
+
+```python
+# More options
+opts2path?
+```
+
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Summary
 

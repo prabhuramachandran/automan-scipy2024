@@ -15,7 +15,12 @@ jupyter:
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Plotting utilities: comparing simulations
 
+<br/>
+<br/>
+
 **Prabhu Ramachandran and Pawan Negi**
+
+<br/>
 
 **SciPy 2024**
 
@@ -107,6 +112,7 @@ filter_cases(cases, lambda x: x.params['order'] % 2)
 %matplotlib inline
 import numpy as np
 import matplotlib.pyplot as plt
+from automan.api import compare_runs
 ```
 
 ```python
@@ -124,7 +130,7 @@ def plotter(case, **kw):
 
 ```python
 case10 = filter_cases(cases, n_train=10)
-compare_runs(cases, plotter, labels=[order'], exact=exact)
+compare_runs(cases, plotter, labels=['order'], exact=exact)
 plt.legend();
 ```
 
