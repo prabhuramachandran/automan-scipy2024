@@ -15,7 +15,12 @@ jupyter:
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Automate your research with automan
 
+<br/>
+<br/>
+
 **Prabhu Ramachandran and Pawan Negi**
+
+<br/>
 
 **SciPy 2024**
 
@@ -53,7 +58,7 @@ jupyter:
    - Typos
    - Missing or wrong parameters
 - Code availability is a problem
-- Management of simulation data
+- Management of simulation data is painstaking
 - Dealing with reviewer comments months afterward
 
 <!-- #endregion -->
@@ -64,13 +69,20 @@ jupyter:
 <br/>
 <br/>
 
-- Can you, reproduce your paper results, after a year?
-- Can you reproduce results of a colleague's paper who works in the same area?
+- Can you reproduce your paper results after a year?
+- Can you reproduce results of a colleague's paper in the same area?
 
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## Goals
+
+# [automan](https://automan.readthedocs.io) helps with all these
+
+<!-- #endregion -->
+
+
+<!-- #region slideshow={"slide_type": "slide"} -->
+## Goals of the workshop
 
 - Use [automan](https://github.com/pypr/automan) for your research output/publication
 - Automate your manuscript
@@ -84,7 +96,7 @@ jupyter:
 
 - Basic knowledge of Python
 - Using classes in Python
-- Comfort with using the command line prompt
+- Comfort with using the shell/CLI (command line interface)
 
 <!-- #endregion -->
 
@@ -102,6 +114,8 @@ jupyter:
 
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## Best usage recommendations
+
+<br/>
 
 Your programs should:
 

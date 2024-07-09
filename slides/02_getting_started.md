@@ -15,7 +15,11 @@ jupyter:
 <!-- #region slideshow={"slide_type": "slide"} -->
 # Getting started with automan
 
+<br/>
+<br/>
+
 **Prabhu Ramachandran and Pawan Negi**
+<br/>
 
 **SciPy 2024**
 
@@ -26,6 +30,9 @@ jupyter:
 
 - Install via `pip install automan`
 - We use numpy and matplotlib for our examples
+- `git clone https://github.com/prabhuramachandran/automan-scipy2024.git`
+  - Slides in the `slides` folder
+  - Examples in `code`
 
 <!-- #endregion -->
 
@@ -91,7 +98,7 @@ Your programs should:
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
-data = np.load('results.npz')
+data = np.load('../code/results.npz')
 plt.plot(data['x'], data['y'])
 plt.savefig('x_cube.png')
 ```
@@ -187,7 +194,8 @@ $ cd manuscript; mklatex paper.tex -pdf
 <!-- #endregion -->
 
 ```python
-s = Simulation(root='test', base_command='test -d $output_dir', arg1=1, arg2='b')
+from automan.api import Simulation
+s = Simulation(root='test', base_command='test -d $output_dir', arg_one=1, arg2='b')
 ```
 ```python
 s.name
@@ -239,7 +247,7 @@ $ python automate0.py
 
 - Nothing will happen!
 
-- You can delete older output and redo it:
+- You can delete older plots and redo them with:
 
 ```bash
 $ python automate0.py -f
