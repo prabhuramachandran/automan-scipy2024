@@ -26,10 +26,9 @@ jupyter:
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->
-## More specification of number of cores
+## Specification of number of cores
 
-- Every simulation is not same
-    - They have different level of computation requirement
+- Every simulation requires different computational resources
 - Options to set specific computation requirement 
     - `n_core`: Used for scheduling
     - `n_thread`: Used to set number of threads
@@ -116,7 +115,7 @@ echo "Stopping at $(date)"
 - One can easily do parameter sweeps to produce insights
 - An example of parameter list for a neural network
   - Network width and depth
-  - activation function
+  - Activation function
   - Number of test samples
   - Number of training samples
 - A helful post process routine
@@ -155,7 +154,7 @@ python automan.py genpdf
 <!-- #region slideshow={"slide_type": "slide"} -->
 ## A C++ program
 
-- compile power.cpp using 
+- Compile `power.cpp` using 
 ```bash
 $ g++ power.cpp -o power.out
 ```
@@ -184,7 +183,7 @@ $ ./power.out input.txt
 
 - Some simulations require input which is an output of another simulation
 - We can create these kind of dependencies in `automan`
-- Let's create two Problems on which powers.py depend
+- Let's create two Problems on which `powers.py` depend
 <!-- #endregion -->
 
 <!-- #region slideshow={"slide_type": "slide"} -->

@@ -5,11 +5,10 @@ import numpy as np
 
 class Powers(Problem):
     def get_requires(self):
-        tasks = super(Powers, self).get_requires()
+        tasks = super().get_requires()
         tasks.extend([('a', PowersPreCalc(self.sim_dir, self.out_dir))])
         return tasks
         
-
     def setup(self):
         base_cmd = 'python powers.py --output-dir $output_dir'
         self.cases = [
@@ -28,7 +27,7 @@ class Powers(Problem):
 
 class PowersPreCalc(Problem):
     def get_requires(self):
-        tasks = super(PowersPreCalc, self).get_requires()
+        tasks = super().get_requires()
         tasks.extend([('a', PowersPrePreCalc(self.sim_dir, self.out_dir))])
         return tasks
 
